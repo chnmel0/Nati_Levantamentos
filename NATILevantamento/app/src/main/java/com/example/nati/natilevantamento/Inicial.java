@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -71,6 +72,26 @@ public class Inicial extends AppCompatActivity {
                 variaveis[18]=edt_obs.getText().toString();
 
                 criandoPdf(edt_dep.getText().toString(), variaveis);
+                Toast.makeText(Inicial.this, "Arquivo Gerado",Toast.LENGTH_LONG).show();
+                edt_dep.setText("");
+                edt_lab.setText("");
+                edt_rep.setText("");
+                edt_rvis.setText("");
+                edt_dt.setText("");
+                edt_qtdcomp.setText("");
+                edt_qtdcompP.setText("");
+                edt_qtdcompS.setText("");
+                edt_dtshow.setText("");
+                edt_dmFisicas.setText("");
+                edt_estCapComp.setText("");
+                edt_cpcdPess.setText("");
+                edt_qtdPredes.setText("");
+                edt_wifi.setText("");
+                edt_acess.setText("");
+                edt_qtdArCond.setText("");
+                edt_typeArCond.setText("");
+                edt_cpcArCond.setText("");
+                edt_obs.setText("");
 
             }
         });
