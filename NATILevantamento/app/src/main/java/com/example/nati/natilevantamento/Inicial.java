@@ -57,6 +57,18 @@ public class Inicial extends AppCompatActivity {
                 variaveis[4]=edt_dt.getText().toString();
                 variaveis[5]=edt_qtdcomp.getText().toString();
                 variaveis[6]=edt_qtdcompP.getText().toString();
+                variaveis[7]=edt_qtdcompS.getText().toString();
+                variaveis[8]=edt_dtshow.getText().toString();
+                variaveis[9]=edt_dmFisicas.getText().toString();
+                variaveis[10]=edt_estCapComp.getText().toString();
+                variaveis[11]=edt_cpcdPess.getText().toString();
+                variaveis[12]=edt_qtdPredes.getText().toString();
+                variaveis[13]=edt_wifi.getText().toString();
+                variaveis[14]=edt_acess.getText().toString();
+                variaveis[15]=edt_qtdArCond.getText().toString();
+                variaveis[16]=edt_typeArCond.getText().toString();
+                variaveis[17]=edt_cpcArCond.getText().toString();
+                variaveis[18]=edt_obs.getText().toString();
 
                 criandoPdf(edt_dep.getText().toString(), variaveis);
 
@@ -67,11 +79,11 @@ public class Inicial extends AppCompatActivity {
 
         try {
 
-            String filename = nome+".pdf";
+            String filename = nome+"_"+variaveis[1].replace(" ","")+".pdf";
 
             document = new Document(PageSize.A4);
 
-            String path = Environment.getExternalStorageDirectory() + "/Documents";
+            String path = Environment.getExternalStorageDirectory() + "/NatiPDFS";
             //String patth = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/Documents";
 
             File dir = new File(path, filename);
@@ -87,11 +99,36 @@ public class Inicial extends AppCompatActivity {
             document.add(new Paragraph("Universidade Federal de Pernambuco"));
             document.add(new Paragraph("Núcleo de tecnologia da Informação - CCS"));
             document.add(new Paragraph("Cadastramento dos Laboratórios da Graduação"));
+            document.add(new Paragraph("     "));
             document.add(new Paragraph("=========================================="));
+            document.add(new Paragraph("     "));
             document.add(new Paragraph("Informações Básicas"));
             document.add(new Paragraph("    Departamento: "+variaveis[0]));
             document.add(new Paragraph("    Nome do Laboratório: "+variaveis[1]));
             document.add(new Paragraph("    Responsável pelo Laboratório: "+variaveis[2]));
+            document.add(new Paragraph("    Responsável pela Visita: "+variaveis[3]));
+            document.add(new Paragraph("    Data: "+variaveis[4]));
+            document.add(new Paragraph("     "));
+            document.add(new Paragraph("Dados do Laboratório"));
+            document.add(new Paragraph("Computadores e Equipamentos"));
+            document.add(new Paragraph("    Quantidade de Computadores: "+variaveis[5]));
+            document.add(new Paragraph("    Computadores em Produção: "+variaveis[6]));
+            document.add(new Paragraph("    Computadores Parados: "+variaveis[7]));
+            document.add(new Paragraph("    DataShow: "+variaveis[8]));
+            document.add(new Paragraph("     "));
+            document.add(new Paragraph("Dados Estruturais"));
+            document.add(new Paragraph("    Dimensões Físicas: "+variaveis[9]));
+            document.add(new Paragraph("    Estimativa Capacidade de Computadores: "+variaveis[10]));
+            document.add(new Paragraph("    Capacidade de Pessoas: "+variaveis[11]));
+            document.add(new Paragraph("    Quantidade de pontos de rede: "+variaveis[12]));
+            document.add(new Paragraph("    Wifi: "+variaveis[13]));
+            document.add(new Paragraph("    Acessibilidade: "+variaveis[14]));
+            document.add(new Paragraph("     "));
+            document.add(new Paragraph("Ar-Condicionado"));
+            document.add(new Paragraph("    Quantidade: "+variaveis[15]));
+            document.add(new Paragraph("    Tipo: "+variaveis[16]));
+            document.add(new Paragraph("    Capacidade*: "+variaveis[17]));
+            document.add(new Paragraph("    Observações: "+variaveis[18]));
 
 
         } catch (DocumentException e) {
