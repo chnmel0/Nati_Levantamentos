@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">NATILevantamento</string>
+
+    <string name="datashow_prompt">None</string>
+    <string-array name="datashow_arrays">
+        <item>Sim</item>
+        <item>Não</item>
+    </string-array>
+
 </resources>

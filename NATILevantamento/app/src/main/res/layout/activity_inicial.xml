@@ -97,8 +97,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
                 android:hint="__/__/__"
+                android:inputType="date"
                 tools:layout_editor_absoluteX="109dp"
                 tools:layout_editor_absoluteY="16dp" />
             <TextView
@@ -118,9 +118,219 @@
                 android:hint="Computadores"
                 tools:layout_editor_absoluteX="109dp"
                 tools:layout_editor_absoluteY="16dp" />
+            <TextView
+                android:id="@+id/txt_qtdcompP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Computadores em Produção:"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="34dp" />
+
+            <EditText
+                android:id="@+id/etx_qtdcompP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Computadores em produçao"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+                android:id="@+id/txt_qtdcompS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Computadores Parados:"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="34dp" />
+
+            <EditText
+                android:id="@+id/etx_qtdcompS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Computadores Parados"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+            android:id="@+id/txt_DataShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Há datashow?"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="34dp" />
+            <EditText
+                android:id="@+id/etx_DataShow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="DataShow"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+            android:id="@+id/txt_dmFisicas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dimensões Físicas:"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="34dp" />
+            <EditText
+                android:id="@+id/etx_dmFisicas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Dimensões Físicas"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+                android:id="@+id/txt_estCapComp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estimativa Capacidade de Computadores:"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="34dp" />
+            <EditText
+                android:id="@+id/etx_estCapComp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Estimativa"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+                android:id="@+id/txt_cpcdPess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capacidade de Pessoas: "
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="34dp" />
+            <EditText
+                android:id="@+id/etx_cpcdPess"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Pessoas"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+                android:id="@+id/txt_qtdPredes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantidade de pontos de rede:"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="34dp" />
+            <EditText
+                android:id="@+id/etx_qtdPredes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Pontos de rede"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+            android:id="@+id/txt_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tem acesso a WiFI:"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="34dp" />
+            <EditText
+                android:id="@+id/etx_wifi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Sim/Nao"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+                android:id="@+id/txt_acess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Acessibilidade:"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="34dp" />
+            <EditText
+                android:id="@+id/etx_acess"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="..."
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+                android:id="@+id/txt_qtdArCond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantidade de Ar-Condicionado:"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="34dp" />
+            <EditText
+                android:id="@+id/etx_qtdArCond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Ar-Condicionado"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+                android:id="@+id/txt_typeArCond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo do Ar-Condicionado:"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="34dp" />
+            <EditText
+                android:id="@+id/etx_typeArCond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Ar-Condicionado"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+                android:id="@+id/txt_cpcArCond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capacidade do Ar-Condicionado:"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="34dp" />
+            <EditText
+                android:id="@+id/etx_cpcArCond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Ar-Condicionado"
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
+            <TextView
+                android:id="@+id/txt_obs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Observações:"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="34dp" />
+            <EditText
+                android:id="@+id/etx_obs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="..."
+                tools:layout_editor_absoluteX="109dp"
+                tools:layout_editor_absoluteY="16dp" />
         <Button
             android:id="@+id/btn_criapdf"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Salvar"
             tools:layout_editor_absoluteX="293dp"
