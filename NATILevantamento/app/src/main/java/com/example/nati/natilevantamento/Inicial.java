@@ -1,5 +1,6 @@
 package com.example.nati.natilevantamento;
 
+import android.os.Build;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -97,16 +98,20 @@ public class Inicial extends AppCompatActivity {
         });
     }
     private void criandoPdf(String nome, String[] variaveis) {
+        String path;
 
         try {
 
-            String filename = nome+"_"+variaveis[1].replace(" ","")+".pdf";
+            String filename = nome.replace(" ","")+"_"+variaveis[1].replace(" ","")+".pdf";
 
             document = new Document(PageSize.A4);
 
-            String path = Environment.getExternalStorageDirectory() + "/NatiPDFS";
-            //String patth = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/Documents";
-
+            if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+                path = Environment.getExternalStorageDirectory() + "/NatiPDFS";
+            }
+            else {
+                path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/NatiPDFS";
+            }
             File dir = new File(path, filename);
             if (!dir.exists()) {
                 dir.getParentFile().mkdirs();
