@@ -1,5 +1,7 @@
 package com.example.nati.natilevantamento;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -23,10 +25,12 @@ import java.io.IOException;
 public class Inicial extends AppCompatActivity {
 
     Document document;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial);
+        Button btn_pasta = (Button) findViewById(R.id.past);
         Button btn_cria = (Button) findViewById(R.id.btn_criapdf);
         final EditText edt_dep = (EditText) findViewById(R.id.etx_dep);
         final EditText edt_lab = (EditText) findViewById(R.id.etx_lab);
@@ -47,7 +51,12 @@ public class Inicial extends AppCompatActivity {
         final EditText edt_typeArCond = (EditText) findViewById(R.id.etx_typeArCond);
         final EditText edt_cpcArCond = (EditText) findViewById(R.id.etx_cpcArCond);
         final EditText edt_obs = (EditText) findViewById(R.id.etx_obs);
-
+        btn_pasta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 openFolder();
+            }
+        });
         btn_cria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +105,22 @@ public class Inicial extends AppCompatActivity {
 
             }
         });
+    }
+    public void openFolder()
+    {
+        String path;
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+            path = Environment.getExternalStorageDirectory() + "/NatiPDFS";
+        }
+        else {
+            path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/NatiPDFS";
+        }
+
+        Uri uri = Uri.parse(path);
+        intent.setDataAndType(uri, "text/csv");
+        startActivity(Intent.createChooser(intent, "Abrindo pasta"));
     }
     private void criandoPdf(String nome, String[] variaveis) {
         String path;
