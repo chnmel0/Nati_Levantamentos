@@ -119,7 +119,7 @@ public class Inicial extends AppCompatActivity {
         }
 
         Uri uri = Uri.parse(path);
-        intent.setDataAndType(uri, "text/csv");
+        intent.setDataAndType(uri,"*/*");
         startActivity(Intent.createChooser(intent, "Abrindo pasta"));
     }
     private void criandoPdf(String nome, String[] variaveis) {
