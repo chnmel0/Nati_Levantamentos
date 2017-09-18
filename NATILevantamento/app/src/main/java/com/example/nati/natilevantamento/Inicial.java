@@ -117,10 +117,16 @@ public class Inicial extends AppCompatActivity {
             path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/NatiPDFS/";
         }
 
-        Uri selectedUri = Uri.parse(path);
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        Uri myUri = Uri.parse(path);
+        intent.setDataAndType(myUri, "file/*");
+        startActivity(intent);
+
+        /*Uri selectedUri = Uri.parse(path);
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setDataAndType(selectedUri, "resource/folder");
-        startActivity(intent);
+        startActivity(intent);*/
 
         //Uri uri = Uri.fromFile(path);
         //Intent intent = new Intent();
@@ -131,6 +137,7 @@ public class Inicial extends AppCompatActivity {
         //intent.setDataAndType(uri,"*/*");
         //startActivity(Intent.createChooser(intent, "Abrindo pasta"));
     }
+
     private void criandoPdf(String nome, String[] variaveis) {
         String path;
 
