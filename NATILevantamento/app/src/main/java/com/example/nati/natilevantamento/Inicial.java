@@ -108,20 +108,25 @@ public class Inicial extends AppCompatActivity {
     }
     public void openFolder()
     {
-        File path;
+        String path;
 
         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-            path = new File(Environment.getExternalStorageDirectory() + "/NatiPDFS/");
+            path = Environment.getExternalStorageDirectory() + "/NatiPDFS/";
         }
         else {
-            path = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/NatiPDFS/");
+            path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/NatiPDFS/";
         }
 
-        Uri uri = Uri.fromFile(path);
-        Intent intent = new Intent();
-        intent.setAction(android.content.Intent.ACTION_VIEW);
-        intent.setData(uri);
-        startActivityForResult(intent,1);
+        Uri selectedUri = Uri.parse(path);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(selectedUri, "resource/folder");
+        startActivity(intent);
+
+        //Uri uri = Uri.fromFile(path);
+        //Intent intent = new Intent();
+        //intent.setAction(android.content.Intent.ACTION_VIEW);
+        ///intent.setData(uri);
+        //startActivityForResult(intent,1);
 
         //intent.setDataAndType(uri,"*/*");
         //startActivity(Intent.createChooser(intent, "Abrindo pasta"));
