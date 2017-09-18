@@ -148,10 +148,10 @@ public class Inicial extends AppCompatActivity {
             document = new Document(PageSize.A4);
 
             if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-                path = Environment.getExternalStorageDirectory() + "/NatiPDFS";
+                path = Environment.getExternalStorageDirectory() + "/NatiPDFS/";
             }
             else {
-                path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/NatiPDFS";
+                path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/NatiPDFS/";
             }
             File dir = new File(path, filename);
             if (!dir.exists()) {
