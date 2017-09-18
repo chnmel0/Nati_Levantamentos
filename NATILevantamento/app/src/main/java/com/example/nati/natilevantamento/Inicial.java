@@ -108,19 +108,23 @@ public class Inicial extends AppCompatActivity {
     }
     public void openFolder()
     {
-        String path;
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        File path;
 
         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-            path = Environment.getExternalStorageDirectory() + "/NatiPDFS";
+            path = new File(Environment.getExternalStorageDirectory() + "/NatiPDFS");
         }
         else {
-            path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/NatiPDFS";
+            path = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/NatiPDFS");
         }
 
-        Uri uri = Uri.parse(path);
-        intent.setDataAndType(uri,"*/*");
-        startActivity(Intent.createChooser(intent, "Abrindo pasta"));
+        Uri uri = Uri.fromFile(path);
+        Intent intent = new Intent();
+        intent.setAction(android.content.Intent.ACTION_VIEW);
+        intent.setData(uri);
+        startActivityForResult(intent, 1);
+
+        //intent.setDataAndType(uri,"*/*");
+        //startActivity(Intent.createChooser(intent, "Abrindo pasta"));
     }
     private void criandoPdf(String nome, String[] variaveis) {
         String path;
